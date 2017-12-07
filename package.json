@@ -1,0 +1,14 @@
+{
+    "name": "Snippets",
+    "version": "1.0.0",
+    "license": "UNLICENSED",
+    "private": true,
+    "author": {
+        "name": "Denys Zubitskyi",
+        "email": "3y6uukuu@gmail.com"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.6.1"
+    }
+}
