@@ -1,16 +1,23 @@
-const words = ['why', 'do', 'you', 'call', 'me', 'when', 'you', 're', 'high'];
-const separators = [' ', ' ', ' ', ' ', ' ', ' ', '\'', ' ', ' ', '?'];
+const words = ['Why', 'do', 'you', 'call', 'me', 'when', `you're`, 'high?'];
+const separators = [' ', '_', '+', '-'];
 
-function joinWith() {
-    return join;
+function joinWith(separator) {
+    function join([left, right, ...rest]) {
+        let str = `${left}${separator}${right}`;
 
-    function join([x, y, ...ys]) {
-        let str = `${x}${s}${y}`;
-
-        return ys.length === 0 ? str : join([str, ...ys]);
+        return rest.length === 0 ? str : join([str, ...rest]);
     }
+
+    return join;
 }
 
-const result = separators.map(joinWith).map(f => f(words));
+const result = separators.map(joinWith).map(fj => fj(words));
 
-console.log(result);
+// console.log(result);
+
+// [
+//     'why do you call me when you\'re high?',
+//     'why_do_you_call_me_when_you\'re_high?',
+//     'why+do+you+call+me+when+you\'re+high?',
+//     'why-do-you-call-me-when-you\'re-high?'
+// ]
